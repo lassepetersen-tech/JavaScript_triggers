@@ -109,21 +109,21 @@ if(SSL.ja3Hash !== null)
 
 
 
-// GitHub Access , Events typen er SSL_OPEN
+// GitHack Access , Events typen er SSL_OPEN
 //
 if (SSL.host === null)
 {
     return;
 }    
 
-if(SSL.host.match("github"))
+if(SSL.host.match("githack"))
 {
     debug(SSL.host);
     
-    commitDetection('GitHub_access', 
+    commitDetection('GitHack_access', 
     {
         categories: ["sec.caution"],
-        title: "GitHub Access",
+        title: "GitHack Access",
         description: "Client IP: " + Flow.client.ipaddr + " accessed this Server IP: " + Flow.server.ipaddr,
         identityKey: getTimestamp().toString(),
         riskScore: 30,    
@@ -148,7 +148,7 @@ if (SSL.host === null)
     return;
 }    
 
-if(SSL.host.match("pastebin.com") || SSL.host.match("githubusercontent.com") || SSL.host.match("githack"))
+if(SSL.host.match("pastebin.com") || SSL.host.match("githack"))
 {
     debug(SSL.host);
     
